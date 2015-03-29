@@ -1,19 +1,25 @@
 #include <iostream>
+#include <algorithm>
+#include <array>
 
 using namespace std;
 
 int main(void)
 {
-	int input[10];
+	array<int, 10> input;
 
-	for(int i = 3; i < 10; i++){
-		for(int j = 0; j < 3; j++){
-			if(input[i] > input[j]){
-				input[j] = input[i];
-				break;
+	for(int i = 0; i < 10; i++){
+		cin >> input[i];
+	}
+
+	for(int i = 0; i < 3; i++){
+		for(int j = i; j < 10; j++){
+			if(input[j] > input[i]){
+				swap(input[j], input[i]);
 			}
 		}
 	}
+
 
 	for(int i = 0; i < 3; i++){
 		cout << input[i] << endl;
@@ -22,3 +28,4 @@ int main(void)
 
 	return 0;
 }
+
