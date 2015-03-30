@@ -6,7 +6,7 @@
 
 using namespace std;
 
-string sum(string& a, string& b){
+string sum(const string& a, const string& b){
 	int i = a.length() - 1;
 	int j = b.length() - 1;
 	int carry = 0;

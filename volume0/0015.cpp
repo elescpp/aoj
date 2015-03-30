@@ -8,7 +8,7 @@ using namespace std;
 
 
 
-string sum(string& a, string& b){
+string sum(const string& a, const string& b){
 	int i = a.length() - 1;
 	int j = b.length() - 1;
 	int carry = 0;
@@ -20,7 +20,7 @@ string sum(string& a, string& b){
 		--i, --j;
 	}
 
-	string& longer = i > j ? a : b;
+	const string& longer = i > j ? a : b;
 	int& index = i > j ? i : j;
 	while(index >= 0){
 		temp.push_back((longer[index] + carry - '0') % 10 + '0');
